@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MoviesCore.Models.MovieListModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div id="view-all">
+    @await Html.PartialAsync("_ViewAll", Model)
+</div>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#movieTable').DataTable();
+        });
+    </script>
+
+}
+
